@@ -34,14 +34,48 @@ namespace Calculadora
             {
                 if(algoritmo.IndexOf(c) != -1)
                 {
-                    valor1 = int.Parse(algoritmo.Substring(0, algoritmo.IndexOf(c)));
-                    valor2 = int.Parse(algoritmo.Substring(algoritmo.IndexOf(c) + 1));
-                    operacao = c;
+                    try
+                    {
+                        valor1 = int.Parse(algoritmo.Substring(0, algoritmo.IndexOf(c)));
+                        valor2 = int.Parse(algoritmo.Substring(algoritmo.IndexOf(c) + 1));
+                        operacao = c;
+                    } catch (FormatException error)
+                    {
+                        MessageBox.Show(error.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            Console.WriteLine(valor1);
-            Console.WriteLine(operacao);
-            Console.WriteLine(valor2);
+
+            if (operacao != ' ')
+                textBoxAlgoritimo.Text = this.RealizarOperacao(operacao, valor1, valor2).ToString();
+            else
+                MessageBox.Show("Ocorreu algum erro! Verifique a sintaxe da conta!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            textBoxAlgoritimo.Focus();
+            textBoxAlgoritimo.SelectAll();
+        }
+        private double RealizarOperacao(char operacao, int valor1, int valor2)
+        {
+            switch (operacao)
+            {
+                case '+':
+                    return valor1 + valor2;
+                case '-':
+                    return valor1 - valor2;
+                case '*':
+                    return valor1 * valor2;
+                case '/':
+                    return (double)valor1 / valor2;
+                default:
+                    return 0;
+            }
+        }
+
+        private void textBoxAlgoritimo_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Return)
+            //    buttonCalcular_Click(buttonCalcular, EventArgs.Empty);
+            if (e.KeyCode == Keys.Escape)
+                textBoxAlgoritimo.Text = "";
         }
     }
 }

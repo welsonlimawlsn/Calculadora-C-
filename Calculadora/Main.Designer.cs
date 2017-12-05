@@ -65,13 +65,15 @@
             // textBoxAlgoritimo
             // 
             this.textBoxAlgoritimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAlgoritimo.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAlgoritimo.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAlgoritimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBoxAlgoritimo.Location = new System.Drawing.Point(12, 52);
             this.textBoxAlgoritimo.MaxLength = 30;
             this.textBoxAlgoritimo.Name = "textBoxAlgoritimo";
-            this.textBoxAlgoritimo.Size = new System.Drawing.Size(260, 19);
+            this.textBoxAlgoritimo.Size = new System.Drawing.Size(260, 28);
             this.textBoxAlgoritimo.TabIndex = 0;
+            this.textBoxAlgoritimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxAlgoritimo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxAlgoritimo_KeyDown);
             // 
             // buttonCalcular
             // 
@@ -80,7 +82,7 @@
             this.buttonCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCalcular.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCalcular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonCalcular.Location = new System.Drawing.Point(185, 77);
+            this.buttonCalcular.Location = new System.Drawing.Point(186, 86);
             this.buttonCalcular.Name = "buttonCalcular";
             this.buttonCalcular.Size = new System.Drawing.Size(86, 34);
             this.buttonCalcular.TabIndex = 1;
@@ -101,11 +103,11 @@
             // 
             // Main
             // 
-            this.AcceptButton = buttonCalcular;
+            this.AcceptButton = this.buttonCalcular;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(152)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(284, 128);
+            this.ClientSize = new System.Drawing.Size(284, 138);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonCalcular);
             this.Controls.Add(this.textBoxAlgoritimo);
